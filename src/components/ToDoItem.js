@@ -42,10 +42,10 @@ export default function ToDoItem({ item, index, list, setList }) {
 
     return (
         <li
-            className={`
-        grid grid-cols-12 border border-gray-600 m-2 rounded-xl p-1
-        ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200
-        `}>
+            className={`grid grid-cols-12 border border-gray-600 m-2 rounded-xl p-1
+            ${isVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200
+            ${item.done ? 'text-gray-600 line-through' : ''}`}
+        >
             <CheckBox done={item.done} onClick={handleDone} />
             <span
                 key={index.toString()}
@@ -56,7 +56,7 @@ export default function ToDoItem({ item, index, list, setList }) {
 
                 suppressContentEditableWarning={true}
                 className={`
-                ${item.done ? 'text-gray-600 line-through' : ''}
+                
                 outline-none col-span-10 transition-colors duration-200
                 border-opacity-0 focus:border-opacity-100 hover:border-opacity-100 border-b border-black m-2
             `}>
